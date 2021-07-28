@@ -15,7 +15,7 @@
                     <?= $title;?>
                 </h1>
 
-                <p> <strong><?= $post;?></strong>
+                <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.
                 Nunc venenatis quam sit amet sodales sodales. Duis sed tristique tellus. 
