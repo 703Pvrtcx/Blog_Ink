@@ -37,7 +37,7 @@ Route::get('/posts/{post}', function ($slug) {
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 Route::get('/posts', function () {
@@ -46,11 +46,12 @@ Route::get('/posts', function () {
 Route::get('/posts/{post}', function ($slug) {
     $path = __DIR__ ."/../resources/posts/{$slug}.html";
     
-    if(! file_exists($path)){
+    if(!file_exists($path)){
         // dd('file does not exist'); // Dump, die, 
-        ddd('file does not exists'); // Dump, Die, Debug
+        // ddd('file does not exists'); // Dump, Die, Debug
+        // abort(404);
+        return redirect('/');
     }
-
     $post = file_get_contents($path);
 
     return view('post', [
