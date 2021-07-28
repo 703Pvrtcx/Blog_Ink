@@ -28,6 +28,11 @@ Route::get('/post', function () {
     ]
 );
 });
+
+Route::get('/posts/{post}', function ($slug) {
+    return $slug;
+});
+
 */
 Route::get('/', function () {
     return view('welcome');
@@ -39,7 +44,12 @@ Route::get('/posts', function () {
     return view('posts');
 });
 Route::get('/posts/{post}', function ($slug) {
-    return $slug;
+    $post = file_get_contents(__DIR__ ."/../resources/posts/{$slug}.html");
+    return view('post', [
+      'post' => $post,
+      'title' => $slug
+    ]
+);
 });
 
 

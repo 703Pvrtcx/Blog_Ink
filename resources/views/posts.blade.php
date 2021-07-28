@@ -10,7 +10,7 @@
 <body>
 <a href="/home" >Go Back</a>
     <article>
-        <h1><a href="/post">First Blog Post</a></h1>
+        <h1><a href="/posts/my-first-post">First Blog Post</a></h1>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.
@@ -28,7 +28,7 @@
         </p>
     </article>    
     <article>
-        <h1><a href="/post">Second Blog Post</a></h1>
+        <h1><a href="/posts/my-second-post">Second Blog Post</a></h1>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.
@@ -46,7 +46,7 @@
         </p>
     </article>  
     <article>   
-        <h1><a href="/post">Third Blog Post</a></h1>
+        <h1><a href="/posts/my-third-post">Third Blog Post</a></h1>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.
