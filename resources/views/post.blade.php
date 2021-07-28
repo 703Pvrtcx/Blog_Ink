@@ -11,8 +11,11 @@
 <body>
 
 <article>
-        <h1>Title Blog Post</h1>
-        <p>
+        <h1>
+            <?= $title;?>
+        </h1>
+
+        <p> <strong><?= $post;?></strong>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.
         Nunc venenatis quam sit amet sodales sodales. Duis sed tristique tellus. 
@@ -27,7 +30,7 @@
         accumsan ac sollicitudin ornare, pellentesque vel lorem. 
         Vivamus elementum massa pulvinar, ultricies eros sed, vulputate urna.
         </p>
-        <a href="/posts"></a>
+        <a href="/posts">Go Back</a>
     </article> 
 
 </body>

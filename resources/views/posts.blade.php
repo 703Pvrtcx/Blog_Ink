@@ -4,14 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="/app.css">
-    <script src="/app.js"></script>
 </head>
 <title>Blogs</title>
 
 <body>
-<a href="/" class=" float-right">Go Back</a>
+<a href="/home" >Go Back</a>
     <article>
-        <h1>First Blog Post</h1>
+        <h1><a href="/post">First Blog Post</a></h1>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.
@@ -29,7 +28,7 @@
         </p>
     </article>    
     <article>
-        <h1>Second Blog Post</h1>
+        <h1><a href="/post">Second Blog Post</a></h1>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.
@@ -46,8 +45,8 @@
         Vivamus elementum massa pulvinar, ultricies eros sed, vulputate urna.
         </p>
     </article>  
-    <article>
-        <h1>Third Blog Post</h1>
+    <article>   
+        <h1><a href="/post">Third Blog Post</a></h1>
         <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam nunc lacus, luctus consequat est vel, accumsan dignissim lacus.

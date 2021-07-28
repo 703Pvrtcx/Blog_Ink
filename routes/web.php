@@ -23,7 +23,11 @@ Route::get('/posts', function () {
     return view('posts');
 });
 Route::get('/post', function () {
-    return view('post');
+    return view('post', [
+        'title' => 'Innocent Ndhlovu',
+        'post' => 'About post',
+    ]
+);
 });
 
 
