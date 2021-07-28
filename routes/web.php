@@ -44,7 +44,15 @@ Route::get('/posts', function () {
     return view('posts');
 });
 Route::get('/posts/{post}', function ($slug) {
-    $post = file_get_contents(__DIR__ ."/../resources/posts/{$slug}.html");
+    $path = __DIR__ ."/../resources/posts/{$slug}.html";
+    
+    if(! file_exists($path)){
+        // dd('file does not exist'); // Dump, die, 
+        ddd('file does not exists'); // Dump, Die, Debug
+    }
+
+    $post = file_get_contents($path);
+
     return view('post', [
       'post' => $post,
       'title' => $slug
