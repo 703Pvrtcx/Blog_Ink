@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,19 +52,6 @@ Route::get('/posts/{post}', function ($slug) {
 );
 })->where('post','[A-z_\-]+');
 
-
-*/
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/posts', function () {
-    return view('posts');
-});
-
-// {post} - wildcard
 Route::get('/posts/{post}', function ($slug) {
     $path = __DIR__ ."/../resources/posts/{$slug}.html";
 
@@ -77,6 +65,30 @@ Route::get('/posts/{post}', function ($slug) {
     $post = file_get_contents($path);
     return view('post', [
       'post' => $post,
+      'title' => $slug
+    ]
+);
+})->where('post','[A-z_\-]+');
+
+
+*/
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/', function () {
+    return view('home');
+});
+Route::get('/posts', function () {
+   // return Post::find('my-first-post');
+    return view('posts');
+});
+// Find a post by its slug and pass it to a view called post
+
+// {post} - wildcard
+Route::get('/posts/{post}', function ($slug) {
+
+     return view('post', [
+      'post' => Post::find($slug),
       'title' => $slug
     ]
 );

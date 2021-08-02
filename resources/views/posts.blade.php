@@ -5,7 +5,6 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="/app.css">
 </head>
-<title>Blogs</title>
 
 <body>
 <a href="/home" >Go Back</a>
