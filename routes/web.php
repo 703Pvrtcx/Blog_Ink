@@ -75,18 +75,24 @@ Route::get('/posts/{post}', function ($slug) {
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    return view('home');
-});
+
 Route::get('/posts', function () {
    // return Post::find('my-first-post');
     return view('posts');
 });
-// Find a post by its slug and pass it to a view called post
+
+Route::get('/', function () {
+    $posts  = Post::all();
+    ddd($posts);
+
+    return view('posts',[
+        'posts'=>Post::all()
+    ]);
+});
 
 // {post} - wildcard
 Route::get('/posts/{post}', function ($slug) {
-
+// Find a post by its slug and pass it to a view called post
      return view('post', [
       'post' => Post::find($slug),
       'title' => $slug
