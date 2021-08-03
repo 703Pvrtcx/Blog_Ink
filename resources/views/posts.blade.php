@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<a href="/" >Go Back</a>
+
     <?php foreach($posts as $post) : ?>   
         <article style="border: 1px solid grey;">
             <h1> 

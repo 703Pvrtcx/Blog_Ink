@@ -84,27 +84,71 @@ Route::get('/posts/{post}', function ($slug) {
 //         'posts'=>Post::all()
 //     ]);
 // });
+
+
+// Route::get('/',function(){
+//     $files = File::files(resource_path('posts'));
+
+//     $posts = array_map(function($file){
+
+//         $document = YamlFrontMatter::parseFile($file);
+
+//         return new Post(
+//             $document->title,
+//             $document->excerpt,
+//             $document->date,
+//             $document->body(),
+//             $document->slug
+//         );
+//      }, $files);
+
+
+//     return view('posts',[
+//         'posts'=> $posts
+//     ]);
+// });
+// Route::get('/',function(){
+
+//     $files = File::files(resource_path('posts')); //Get files from the paths in the resource folder
+
+//     $posts = collect($files)->map(function($file){ //Collect all array items 
+
+//         $document = YamlFrontMatter::parseFile($file); //Corvert an array into a Post Object
+
+//         return new Post(
+//             $document->title,
+//             $document->excerpt,
+//             $document->date,
+//             $document->body(),
+//             $document->slug);
+//     });
+
+//      return view('posts',[
+//         'posts'=> $posts
+//     ]);
+// });
 Route::get('/',function(){
-    $files = File::files(resource_path('posts'));
 
-    $posts = array_map(function($file){
+    $files = File::files(resource_path('posts')); //Get files from the paths in the resource folder
 
-        $document = YamlFrontMatter::parseFile($file);
+    $posts = collect($files)->map(function($file){ //Collect all array items 
+
+        $document = YamlFrontMatter::parseFile($file); //Corvert an array into a Post Object
 
         return new Post(
             $document->title,
             $document->excerpt,
             $document->date,
             $document->body(),
-            $document->slug
-        );
-     }, $files);
+            $document->slug);
+    });
 
-
-    return view('posts',[
+     return view('posts',[
         'posts'=> $posts
     ]);
 });
+
+
 
 // {post} - wildcard
 Route::get('/posts/{post}', function ($slug) {
