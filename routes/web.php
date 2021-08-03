@@ -133,7 +133,7 @@ Route::get('/',function(){
 
     $posts = collect($files)->map(function($file){ //Collect all array items 
 
-        $document = YamlFrontMatter::parseFile($file); //Corvert an array into a Post Object
+        $document = YamlFrontMatter::parseFile($file); 
 
         return new Post(
             $document->title,
@@ -142,11 +142,12 @@ Route::get('/',function(){
             $document->body(),
             $document->slug);
     });
-
+//Corvert an array into a Post Object
      return view('posts',[
         'posts'=> $posts
     ]);
 });
+
 
 
 
