@@ -10,10 +10,15 @@
 <a href="/" >Go Back</a>
     <?php foreach($posts as $post) : ?>   
         <article style="border: 1px solid grey;">
-            <h1> <?= $post->title; ?></h1>
+            <h1> 
+                <a href="/posts/<?= $post->slug; ?>">
+                     <?= $post->title; ?>
+                </a>
+              
+            </h1>
          
             <div>  
-                <p><?= $post->body; ?></p> 
+                <p><?= $post->slug; ?></p> 
                 <?= $post->date; ?>
             </div>
               <h4><?= $post->excerpt; ?></h4>

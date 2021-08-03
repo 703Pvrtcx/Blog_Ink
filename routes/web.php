@@ -86,24 +86,21 @@ Route::get('/posts/{post}', function ($slug) {
 // });
 Route::get('/',function(){
     $files = File::files(resource_path('posts'));
-    $posts =[];
 
-    foreach ($files as $file) {
-        $document=  YamlFrontMatter::parseFile($file);
+    $posts = array_map(function($file){
 
-        $posts[] = new Post(
+        $document = YamlFrontMatter::parseFile($file);
+
+        return new Post(
             $document->title,
             $document->excerpt,
             $document->date,
-            $document->body()
+            $document->body(),
+            $document->slug
         );
-    
-    }    
-    // ddd($posts[0]->title);
-    // ddd($posts[0]->body);
-    // ddd($posts[0]->excerpt);
-    // ddd($posts[0]->date);
-    
+     }, $files);
+
+
     return view('posts',[
         'posts'=> $posts
     ]);
