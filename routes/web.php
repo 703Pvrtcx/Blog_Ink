@@ -99,10 +99,14 @@ Route::get('/',function(){
         );
     
     }    
-    ddd($posts[0]->title);
+    // ddd($posts[0]->title);
     // ddd($posts[0]->body);
     // ddd($posts[0]->excerpt);
     // ddd($posts[0]->date);
+    
+    return view('posts',[
+        'posts'=> $posts
+    ]);
 });
 
 // {post} - wildcard

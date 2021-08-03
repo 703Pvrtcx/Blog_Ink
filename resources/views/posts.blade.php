@@ -9,8 +9,16 @@
 <body>
 <a href="/" >Go Back</a>
     <?php foreach($posts as $post) : ?>   
-        <article>
-            <?= $post; ?>
-        </article>    
+        <article style="border: 1px solid grey;">
+            <h1> <?= $post->title; ?></h1>
+         
+            <div>  
+                <p><?= $post->body; ?></p> 
+                <?= $post->date; ?>
+            </div>
+              <h4><?= $post->excerpt; ?></h4>
+           
+        </article> 
+        
     <?php endforeach; ?>
 </body>
