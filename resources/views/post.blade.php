@@ -30,7 +30,7 @@
                 accumsan ac sollicitudin ornare, pellentesque vel lorem. 
                 Vivamus elementum massa pulvinar, ultricies eros sed, vulputate urna.
                 </p>
-                <a href="/posts">Go Back</a>
+               
         </article> 
 
 </body>
