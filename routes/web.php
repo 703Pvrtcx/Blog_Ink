@@ -77,13 +77,15 @@ Route::get('/posts/{post}', function ($slug) {
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// Route::get('/', function () {
+//     $posts  = Post::all();
 
-Route::get('/posts', function () {
-   // return Post::find('my-first-post');
-    return view('posts');
-});
+//     return view('posts',[
+//         'posts'=>Post::all()
+//     ]);
+// });
 Route::get('/',function(){
-    $files = File::files(resource_path('post'));
+    $files = File::files(resource_path('posts'));
     $posts =[];
 
     foreach ($files as $file) {
@@ -91,17 +93,13 @@ Route::get('/',function(){
 
         $posts[] = new Post(
             $document->title,
-            $document->excetps,
+            $document->excerpt,
             $document->date,
-            $document->body
+            $document->body()
         );
-    }
-});
-Route::get('/', function () {
-    $posts  = Post::all();
-    return view('posts',[
-        'posts'=>Post::all()
-    ]);
+    
+    }    
+    ddd($posts);
 });
 
 // {post} - wildcard
