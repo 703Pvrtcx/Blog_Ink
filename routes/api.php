@@ -1,9 +1,7 @@
 <?php
-
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 Route::apiResource('products',ProductController::class);
-
 Route::group([
     'middleware' => 'api',
     'namespace' => 'App\Http\Controllers',
